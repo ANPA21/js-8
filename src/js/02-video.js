@@ -6,7 +6,7 @@ const player = new Player(iframe);
 const CURENT_TIME = 'videplayer-current-time';
 resumePlayback();
 
-player.on('timeupdate', throttle(logTime, 250));
+player.on('timeupdate', throttle(logTime, 1000));
 
 function logTime(evt) {
   localStorage.setItem(CURENT_TIME, evt.seconds);

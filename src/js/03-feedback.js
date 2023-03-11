@@ -20,12 +20,14 @@ function onInputChange(evt) {
 refs.form.addEventListener('submit', onSubmit);
 
 function onSubmit(evt) {
+  evt.preventDefault();
+
   if (refs.textarea.value === '' || refs.email.value === '') {
     return alert('Все поля должны быть заполнены');
   }
-  evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.removeItem(FORM_STATE);
+  console.log(formData);
   formData = {};
 }
 
